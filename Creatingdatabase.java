@@ -21,20 +21,20 @@ catch(ClassNotFoundException cnfex) {
 	cnfex.printStackTrace();
 }
 	try {
-		String msAccessDBName="Database-C\\Users\\Lakhanya\\eclipse-workspace\\src\\DBMLearners.accdb";
+		String msAccessDBName="Database-C\\Users\\Zikhona\\eclipse-workspace\\src\\DBMLearners.accdb";
 		String dbURL="jdbc:odbc:Driver=" +"{Microsoft Access Driver(*.mdb,*accdb)};"+
 		"DBQ=" + msAccessDBName+ ";DriverID=22;READONLY=true";
 		
 		connection= DriverManager.getConnection(dbURL);
 		statement=connection.createStatement();
 		
-		resultset=statement.execute("INSERT INTO Learners Details"+ "VALUES(03051236987403,'Amila','Simanda","12May2003","Female",'9')");"
+		resultset=statement.execute("INSERT INTO Learners Details"+ "VALUES(0111090518080,'Lisakhanya','Tshokolo","09November2001","Female",'12')");"
 		System.out.println("Inserted recorf into the table");
 
-		resultset=statement.executeQuery("DELETE FROM Learners Details WHERE tName='Lisakhanya'");
+		resultset=statement.executeQuery("DELETE FROM Learners Details WHERE tName='Zikhona'");
 		System.out.println("Recorde Deleted");
 		
-		resultset=statement.executeQuery("SELECT * FROM Parents Details WHERE tSurname LIKE 'M%'");
+		resultset=statement.executeQuery("SELECT * FROM Parents Details WHERE tSurname LIKE 'Z%'");
 		
 		while(resultset.next()) {
 			System.out.println(resultset.getInt(1)+ "\t" +
